@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "ai-fighter",
+    "dev": "ai-fighter",
+    "prod": "ai-fighter"
+  }
+}

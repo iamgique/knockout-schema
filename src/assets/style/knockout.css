@@ -1,0 +1,26 @@
+.knockout-scheme {
+	height: 100%;
+}
+.round {
+	display: table-cell;
+	vertical-align: middle;
+	width: 160px;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.round > li {
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	width: 150px;
+	text-align: center;
+	line-height: 40px;
+}
+.round > li.match {
+	background: #ddd;
+}
+.round > li + li {
+	margin-top: 10px;
+}
+ 
