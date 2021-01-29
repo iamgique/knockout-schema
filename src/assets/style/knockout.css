@@ -1,10 +1,16 @@
 .knockout-scheme {
 	height: 100%;
+	/*padding: 10px 0 0 0;*/
+	position: relative;
+	display: block;
+	top: 50%;
+	left: 5%;
+	transform: translateY(-45%);
 }
 .round {
 	display: table-cell;
 	vertical-align: middle;
-	width: 160px;
+	width: 190px;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
@@ -12,15 +18,20 @@
 .round > li {
 	margin: 0;
 	padding: 0;
-	height: 40px;
-	width: 150px;
+	height: 35px;
+	width: 180px;
 	text-align: center;
 	line-height: 40px;
 }
 .round > li.match {
+	opacity: 0.8;
 	background: #ddd;
 }
 .round > li + li {
 	margin-top: 10px;
+}
+
+.round > li p {
+	display: inline;;
 }
  

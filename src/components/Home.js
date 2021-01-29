@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Parallax } from 'react-parallax';
+import homeImage from '../assets/images/home.jpg';
 
 const imageHeight = {
     height: '100vh',
 };
 
-const image1 = "https://media-public.canva.com/MADQ45o5yck/1/screen_2x.jpg";
-
 class Home extends Component {
     render() {
         return (
         <React.Fragment>
-            <Parallax bgImage={image1}>
+            <Parallax bgImage={homeImage}>
                 <div style={imageHeight}>
                     <div className="block">
                         <h1>

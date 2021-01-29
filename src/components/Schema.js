@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { Markup } from 'interweave';
 import { Parallax } from 'react-parallax';
 import _ from 'lodash';
+import knockoutImage from '../assets/images/knockout.jpg';
 
 const imageHeight = {
     height: '100vh',
 };
-
-const image = "https://media-public.canva.com/MADGx8_0l5o/4/screen_2x.jpg";
+const maxStartMatch = 16;
 
 class Schema extends Component {
     constructor(props){
@@ -14,57 +15,53 @@ class Schema extends Component {
         this.state = {
           messages: []
         };
-        let app = this.props.db.database().ref('registered');
-
-        app.on('value', snapshot => {
-          this.getData(snapshot.val());
-        });
-      }
-      getData(values){
+    }
+    componentDidMount(){
+        const ref = this.props.db.database().ref('/registered');
+        const onDataCallback = (data) => {
+            this.getData(data.val());
+        }
+        ref.on("value", onDataCallback);
+    }
+    async getData(values){
         let messagesVal = values;
         let messages = _(messagesVal)
-                        .keys()
-                        .map(messageKey => {
-                            let cloned = _.clone(messagesVal[messageKey]);
-                            cloned.key = messageKey;
-                            return cloned;
-                        }).value();
+            .keys()
+            .map(messageKey => {
+                let cloned = _.clone(messagesVal[messageKey]);
+                cloned.key = messageKey;
+                return cloned;
+            }).value();
         this.setState({
             messages: messages
         });
-      }
+    }
     render() {
-        let messageNodes = this.state.messages.map((message) => {
-            return (
-                <li className="match">
-                    {message.aka}
-                </li>
-            )
-        });
+        const rows = this.state.messages.reduce(function (rows, key, index) { 
+            return (index % 2 === 0 ? rows.push([key.aka]) 
+              : rows[rows.length-1].push(key.aka)) && rows;
+        }, []);
+
+        const startMatch = rows.map((row, i) => ( 
+            <li className="match">
+                { row.map((col, index) => (index % 2 === 0 ? <p>{i + 1}. <b>{col}</b> </p> : <p> vs <b>{col}</b></p>)) }
+            </li>
+        ))
+
+        const freeMatch = [...Array(maxStartMatch - startMatch.length)].map((x, i) => ( 
+            <li className="match">
+                <p>{i + startMatch.length + 1}. Free Match </p>
+            </li>
+        ))
 
         return (
         <React.Fragment>
-            <Parallax bgImage={image}>
+            <Parallax bgImage={knockoutImage}>
                 <div style={imageHeight}>
                     <div className="knockout-scheme">
                         <ul className="round">
-                            {/*messageNodes*/}
-                            <li className="match">Match 1</li>
-                            <li className="match">Match 2</li>
-                            <li className="match">Match 3</li>
-                            <li className="match">Match 4</li>
-                            <li className="match">Match 5</li>
-                            <li className="match">Match 6</li>
-                            <li className="match">Match 7</li>
-                            <li className="match">Match 8</li>
-                            <li className="match">Match 9</li>
-                            <li className="match">Match 10</li>
-                            <li className="match">Match 11</li>
-                            <li className="match">Match 12</li>
-                            <li className="match">Match 13</li>
-                            <li className="match">Match 14</li>
-                            <li className="match">Match 15</li>
-                            <li className="match">Match 16</li>
+                            {startMatch}
+                            {freeMatch}
                         </ul>
                         <ul className="round">
                             <li className="match">Match 17</li>

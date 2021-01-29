@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
     "firebase": "^8.2.4",
+    "interweave": "^12.7.0",
     "lodash": "^4.17.20",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
@@ -14,6 +15,7 @@
     "react-parallax": "^3.1.2",
     "react-scripts": "4.0.1",
     "react-scroll-parallax": "^2.3.5",
+    "reactstrap": "^8.9.0",
     "trim": "^1.0.0",
     "web-vitals": "^0.2.4"
   },
@@ -22,8 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:dev":"env-cmd -f .env.development npm run build && firebase deploy -P dev",
-    "build:prod":"env-cmd -f .env.production npm run build && firebase deploy -P prod"
+    "build:dev": "env-cmd -f .env.development npm run build && firebase deploy -P dev",
+    "build:prod": "env-cmd -f .env.production npm run build && firebase deploy -P prod"
   },
   "eslintConfig": {
     "extends": [

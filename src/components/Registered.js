@@ -1,23 +1,11 @@
 import React, { Component } from 'react';
 import { Parallax } from 'react-parallax';
 import _ from 'lodash';
-
-let maximumPlayer = 32;
-const inside = {
-    background: "#000000",
-    color: "#ffffff",
-    position: "relative",
-    top: "60%",
-    left: "50%",
-    transform: "translate(-50%,-100%)",
-    display: "inline",
-};
+import registeredImage from '../assets/images/registered.jpg';
 
 const imageHeight = {
     height: '50vh',
 };
-
-const image = "https://media-public.canva.com/MAAgcB7thl4/1/screen_3x.jpg";
 
 class Registered extends Component {
     constructor(props){
@@ -25,13 +13,15 @@ class Registered extends Component {
         this.state = {
           messages: []
         };
-        let app = this.props.db.database().ref('registered');
-        
-        app.on('value', snapshot => {
-          this.getData(snapshot.val());
-        });
     }
-    getData(values){
+    componentDidMount(){
+        const ref = this.props.db.database().ref('/registered');
+        const onDataCallback = (data) => {
+            this.getData(data.val());
+        }
+        ref.on("value", onDataCallback);
+    }
+    async getData(values){
         let messagesVal = values;
         let messages = _(messagesVal)
                         .keys()
@@ -55,10 +45,10 @@ class Registered extends Component {
 
         return (
         <React.Fragment>
-            <Parallax bgImage={image}>
+            <Parallax bgImage={registeredImage}>
                 <div style={imageHeight}>
                     <div className="block">
-                        <h3>Registered</h3>
+                        <p style={{marginTop:'20px', fontWeight:'200'}}>Registered</p>
                         <ul>
                             {messageNodes}
                         </ul>

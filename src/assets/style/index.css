@@ -83,10 +83,15 @@ a {
 
 .block ul {
   position: absolute;
-  top: 65%;
+  top: 60%;
   left: 50%;
   transform: translate(-55%,-100%);
   font-weight: 100;
+  word-wrap: break-word;
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+  width: 80%;
+  line-height: 50px;
 }
 
 .block li {
