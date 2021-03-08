@@ -166,7 +166,7 @@ class RegisterBox extends Component {
                                             onKeyUp={(e) => this.onKeyup(e)}
                                             disabled={this.state.isDisabled}
                                             maxLength="100"
-                                            placeholder="Your email, e.g. nicholas.c@scb.co.th" />
+                                            placeholder="Your email, e.g. nicholas.c@boxing.co.th" />
                                         <p style={{fontSize: '14px', fontWeight: '400', textAlign: 'left', color:'#851c24'}}>{this.state.formErrors.email}</p>
                                     </div>
                                     <div className="input form-field col x-50">

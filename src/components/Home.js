@@ -15,10 +15,10 @@ class Home extends Component {
                     <div className="block">
                         <h1>
                             <p>AI FIGHTING</p>
-                            SCB - Gameday
+                            Gameday
                             <p>COMPETITION</p>
                         </h1>
-                        <h5>&copy; 2021 Sakul Montha | SCB Digital Academy</h5>
+                        <h5>&copy; 2021 Sakul Montha </h5>
                     </div>
                 </div>
             </Parallax>

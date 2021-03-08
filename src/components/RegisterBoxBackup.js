@@ -64,7 +64,7 @@ class RegisterBox extends Component {
                                             type="email" 
                                             id="input" 
                                             className="input-text" 
-                                            placeholder="Your email, e.g. nicholas.c@scb.co.th"
+                                            placeholder="Your email, e.g. nicholas.c@boxing.co.th"
                                             onChange={this.handleChange('email')}
                                             onKeyUp={this.onKeyup}
                                             value={this.state.contact.email}

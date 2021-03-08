@@ -7,7 +7,7 @@ import knockoutImage from '../assets/images/knockout.jpg';
 const imageHeight = {
     height: '100vh',
 };
-const maxStartMatch = 10;
+const maxStartMatch = 16;
 
 class Schema extends Component {
     constructor(props){
@@ -64,39 +64,43 @@ class Schema extends Component {
                             {freeMatch}
                         </ul>
                         <ul className="round">
-                            <li className="match"><p><b>KnockingNew</b> vs <b>Innozent</b></p> </li>
+                            <li className="match">Match 17</li>
                             <li>&nbsp;</li>
-                            <li className="match"><p><b>PS</b> vs <b>X Æ A-12</b></p> </li>
+                            <li className="match">Match 18</li>
                             <li>&nbsp;</li>
-                            <li className="match"><p><b>Moshirosang</b> vs <b>Ayuth</b></p> </li>
-                            <li>&nbsp;</li>
-                            <li className="match"><p><b>Pookie</b> vs <b>Tonhom</b></p> </li>
-                            <li>&nbsp;</li>
-                            <li className="match"><p><b>fae samphan gym</b> vs <b>mildmi</b></p> </li>
-                        </ul>
-                        
-                        <ul className="round">
-                            <li>&nbsp;</li>
-                            <li>&nbsp;</li>
-                            <li className="match"><p><b>Moshirosang</b> vs <b>PS</b></p> </li>
-                            <li>&nbsp;</li>
-                            <li>&nbsp;</li>
-                            <li>&nbsp;</li>
-                            
-                            <li className="match"><p><b>Innozent</b> vs <b>fae samphan gym</b></p> </li>
-                            <li>&nbsp;</li>
-                            <li>&nbsp;</li>
-                            
-                            <li className="match">Tonhom</li>
-                            <li>&nbsp;</li>
-                            
-                            
-                        </ul>
-                        
-                        <ul className="round">
                             <li className="match">Match 19</li>
                             <li>&nbsp;</li>
                             <li className="match">Match 20</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 21</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 22</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 23</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 24</li>
+                        </ul>
+                        
+                        <ul className="round">
+                            <li className="match">Match 25</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 26</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 27</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 28</li>
+                        </ul>
+                        
+                        <ul className="round">
+                            <li className="match">Match 29</li>
+                            <li>&nbsp;</li>
+                            <li className="match">Match 30</li>
                         </ul>
                         
                         <ul className="round">
